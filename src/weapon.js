@@ -48,11 +48,18 @@ const TYPE = (() => {
   return "?";
 })();
 
-const MIN_HP = document.querySelector(".prt-min-hp .txt-hp-value").textContent;
-const MAX_HP = document.querySelector(".prt-max-hp .txt-hp-value").textContent;
-const MIN_ATK = document.querySelector(".prt-min-atk .txt-atk-value").textContent;
-const MAX_ATK = document.querySelector(".prt-max-atk .txt-atk-value").textContent;
-
+const MAX_LVL = document.querySelector(".prt-max-lvl .txt-value").textContent;
+  if MAX_LVL = "MAX 100" const EVO = 3
+  if MAX_LVL = "MAX 150" const EVO = 4
+  
+const HP1 = document.querySelector(".prt-min-hp .txt-hp-value").textContent;
+  if EVO = 3 const HP2 = document.querySelector(".prt-max-hp .txt-hp-value").textContent;
+  if EVO = 4 const HP3 = document.querySelector(".prt-max-hp .txt-hp-value").textContent;
+  
+const ATK1 = document.querySelector(".prt-min-atk .txt-atk-value").textContent;
+  if EVO = 3 const ATK2 = document.querySelector(".prt-max-atk .txt-atk-value").textContent;
+  if EVO = 4 const ATK3 = document.querySelector(".prt-max-atk .txt-atk-value").textContent;
+  
 const OUGI_NAME = document.querySelector(".prt-detail-special .name-m").textContent;
 const OUGI_DESC = document.querySelector(".prt-detail-special .comment-m").textContent;
 
@@ -73,66 +80,63 @@ const SKILL_THREE_LEVELREQ = document.querySelector(".prt-detail-support > .not-
 const FLAVOR = document.querySelector(".prt-flavor").textContent.trim();
 
 const result = nonEmpty`{{Weapon
-|id= ${ID}
+|id=${ID}
 |series=
 |group=
-|name= ${NAME}
-|jpname=
-|element= ${ELEMENT}
-|weapon= ${TYPE}
-|rarity= ${RARITY}
+|name=${NAME}
+|element=${ELEMENT}
+|weapon=${TYPE}
+|rarity=${RARITY}
 |release_date=
 |4star_date=
 |5star_date=
 |link_jpwiki=
 |link_gamewith=
-|link_kamigame=
 |min_rank=
-|evo_min= 0
-|evo_base= 3
-|evo_max= 3
-|evo_red=
+|evo_min=0
+|evo_base=3
+|evo_max=${EVO}
 |image=
 |gran=
 |djeeta=
-|hp1= ${MIN_HP}
-|hp2= ${MAX_HP}
-|hp3=
-|atk1= ${MIN_ATK}
-|atk2= ${MAX_ATK}
-|atk3=
+|hp1=${HP1}
+|hp2=${HP2}
+|hp3=${HP3}
+|atk1=${ATK1}
+|atk2=${ATK2}
+|atk3=${ATK3}
 |character=
 |obtain=
 |obtain_text=
-|ougi_name= ${OUGI_NAME}
-|ougi= ${OUGI_DESC}
+|ougi_name=${OUGI_NAME}
+|ougi=${OUGI_DESC}
 |ougi_4s=
-|s1_name= ${SKILL_ONE_NAME}
-|s1_icon= ${SKILL_ONE_ICON}
-|s1_desc= ${SKILL_ONE_DESC}
+|s1_name=${SKILL_ONE_NAME}
+|s1_icon=${SKILL_ONE_ICON}
+|s1_desc=${SKILL_ONE_DESC}
 |s1_lvl=
 |s1_4s_name=
 |s1_4s_icon=
 |s1_4s_lvl=
 |s1_4s_desc=
-|s2_name= ${SKILL_TWO_NAME}
-|s2_icon= ${SKILL_TWO_ICON}
-|s2_desc= ${SKILL_TWO_DESC}
-|s2_lvl= ${SKILL_TWO_LEVELREQ}
+|s2_name=${SKILL_TWO_NAME}
+|s2_icon=${SKILL_TWO_ICON}
+|s2_desc=${SKILL_TWO_DESC}
+|s2_lvl=${SKILL_TWO_LEVELREQ}
 |s2_4s_name=
 |s2_4s_icon=
 |s2_4s_lvl=
 |s2_4s_desc=
-|s3_name= ${SKILL_THREE_NAME}
-|s3_icon= ${SKILL_THREE_ICON}
-|s3_desc= ${SKILL_THREE_DESC}
-|s3_lvl= ${SKILL_THREE_LEVELREQ}
+|s3_name=${SKILL_THREE_NAME}
+|s3_icon=${SKILL_THREE_ICON}
+|s3_desc=${SKILL_THREE_DESC}
+|s3_lvl=${SKILL_THREE_LEVELREQ}
 |s3_4s_name=
 |s3_4s_icon=
 |s3_4s_lvl=
 |s3_4s_desc=
 |reduce_advice=
-|reduce=
+|reduce=premium
 |flavor= ${FLAVOR}
 }}
 `;
